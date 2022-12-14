@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //一般我们都是使用for去遍历所有的数组js中还为我们提供了forEact
+        //对于这种我们创建的函数但是我们不能去调用的函数叫做回调函数；
+        //数组中有几个函数就会执行几次，每次执行的时候浏览器都会将遍历到的元素以实参的的形式传递进，可以使用形参的方式进行读取
+        //浏览器会在回调函数中传递三个参数；
+        //第一个参数，就是正在遍历的元素
+        //第二个参数，就是正在遍历的索引
+        //第三个参数，就是正在遍历的数组
+        var a = ["zhu","shabi ","niuniu"]
+        a.forEach (function(s){
+            // console.log("shabi")
+            console.log(s)
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 2px red solid;
+            /* 要鼠标跟随直接使用绝对定位让它定在鼠标上 */
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        //让div可以跟随鼠标去移动
+        window.onload = function () {
+            var box1 = document.getElementById("box1")
+            //     document.onmousemove 。因为是要跟着鼠标去移动DOM 上
+            //所以是获取到所有DOM上的坐标
+            document.onmousemove = function (a) {
+                a = a || window.a;
+                //获取到鼠标的坐标
+
+                ///pageX 相对于clientX来说，前者指向全局的不管怎么去变动都可以获取到全局的坐标
+                //但是这两个属性在IE8 不支持
+                //解决浏览器兼容问题
+                //获取到滚动条
+                //chrome认为浏览器的滚动条是body的，可以通过body.scrollTop来获取它的坐标
+                //而火狐浏览器他们就会认为浏览器滚动条是属于HTML的所以要去html找
+                var st = document.body.scrollTop || document.documentElement.scrollTop;
+                var stl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+                var left = a.clientX;
+                var top = a.clientY;
+                //设置div的偏移量
+                box1.style.left = left+stl + "px";
+                box1.style.top = top + st + "px"
+
+            }
+        }
+    </script>
+</head>
+
+<body style="height: 2000px;width: 2000px;">
+    <div id="box1">
+
+    </div>
+</body>
+
+</html>

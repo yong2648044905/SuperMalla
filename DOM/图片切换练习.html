@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            padding: auto;
+            margin: 0 auto;
+            border: 2px grey solid;
+        }
+
+        #box1 {
+            margin: 0 auto;
+            width: 1080px;
+            height: 420px;
+            border: 2px grey solid;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var img1 = document.getElementById("img1")
+            //创建一个数组来存储图片
+            var imgArr = ["./imges/109951167975294156.jpg", "./imges/109951167975319372.jpg", "./imges/109951167975324915.jpg", "./imges/109951167975325211.jpg", "./imges/109951167975431885.jpg"]
+            //创建一个变量用来保存当前索引
+            var index = 0;
+            //绑定按钮
+            var btn1 = document.getElementById("btn1")
+
+            var btn2 = document.getElementById("btn2")
+            btn2.onclick = function () {
+                clearInterval(a)
+            }
+            //定义一个变量保存定时器
+            var a;
+            btn1.onclick = function () {
+                //当前如果一直去点开启的话就会一直开启定时器
+                //只要开启定时器之前，需要将当前元素的其他定时器
+
+                clearInterval(a)
+                a = setInterval(function () {
+                    //让索引自增
+                    index++;
+
+                    //当索引大余数组的长度的时候返回索引为0的图片
+                    if (index >= imgArr.length) {
+                        index = 0
+                    }
+
+                    // 第二种写法
+                    // index = index % imgArr.length;
+                    //修改src的属性
+                    img1.src = imgArr[index];
+                }, 1000)
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+<div id="box">
+
+    <div id="box1">
+        <img id="img1" src="./imges/109951167975289216.jpg" alt="">
+        <img id="img2" src="./imges/109951167975294156.jpg" alt="">
+
+        <img id="img3" src="./imges/109951167975319372.jpg" alt="">
+
+        <img id="img4" src="./imges/109951167975324915.jpg" alt="">
+
+        <img id="img5" src="./imges/109951167975325211.jpg" alt="">
+        <img id="img6" src="./imges/109951167975431885.jpg" alt="">
+
+    </div>
+    <button id="btn1">shaohs</button>
+    <button id="btn2">停下</button>
+
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function fun (a,b){
+        //    console.log(this)
+        // }
+
+        // var obj = {name:"shabi"}
+        // // var obj2 = {name:"shabi2"}
+        // // fun.apply(obj2);
+        // fun.call( obj,1,2)
+
+        //使用apply可以指定this是什么
+        //this 的情况：
+        //1，以函数调用的时候this永远都是wind
+        //2，以方法的情况调用时，this是调用方法的对象
+        //3，以构造函数的形式调用时，this是新创建的那个对象
+        //4，使用call和apply调用的时候this是指定的那个对象
+        // function fun(a, b) {
+        //     // alert(this.name)
+        //     console.log(a)
+        //     console.log(b)
+
+        // }
+        // var a2 = {
+        //     name: "shahosdh",
+        //     sayName: function () {
+        //         alert(this.name)
+        //     }
+        // }
+        // var a = {
+        //     name: "shabi",
+        //     sayName: function () {
+        //         alert(this.name)
+        //     }
+        // };
+        //call 方法可以将实参在对象后依次的传递
+        // fun.call(a, 1, 2);
+        //apply要把实参封装在一个数组里
+        // fun.apply(a, [1, 2]);
+
+        //在两个call和apply调用的时候可以将一个指定的对象作为参数
+
+
+        // fun.apply(a2);
+        // a.sayName.apply(a2)
+        //参数是谁this就是谁
+        /*
+        call()和apply()
+        这两个方法都是调用函数对象的方法，需要通过函数对象来进行调用
+        在调用这这两个方法的时候可以将一个对象指定为第一个参数
+        此时这个对象将会成为函数执行时候的this
+
+        call方法可以将实参在对象之后依次的 传递
+        apply方法需要将实参封装到一个数组中间统一的传递
+        */
+
+        //在调用函数的时候浏览器每次都会传递进两个隐含的参数：
+        //1，函数的上下文对象 this;
+        //2，封装实参的对象 arguments;
+        //arguments,它也可以操作数组获取数据，也可以获取数组的长度
+        //在我们调用函数的时候我们所传递的参数都会在arguments中保存
+
+        function fun() {
+            //检查argumentsfe是不是一个数组
+            // console.log(arguments instanceof Array)
+            // console.log(Array.isArray(arguments))
+            console.log(arguments[0]);
+
+        }
+        fun("shabi",20,true,);
+        //argumentsfe  封装实参的对象
+        //arguments是一个类数组并不是数组，它也可以通过索引来操作数据，也可以获取实参的长度
+        // arguments.length获取长度
+        //arguments[2]索引数组
+        //在调用函数的时候我们所传递的实参都会在arguments中保存
+        //即使不定义函数中的形参也可以通过arguments来使用实参
+        //他里面有一个属性叫做callee这个属性对应一个函数对象，就是当前正在指向的函数的对象
+        // function fun() {
+        //     console.log(arguments.callee)
+        // }
+        // fun(1,2,2,3,5535325,532,523,5);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [1, 2, 2, 3, 2, 1, 3, 4, 2, 5]
+
+        //获取数组
+        for (var a = 0; a < arr.length; a++) {
+            // console.log(arr[a])
+            //获取第二组数组
+            for (var b = a + 1; b < arr.length; b++) {
+                //判断两个数组是否有重复的数,如果有重复的数则splice
+                if (arr[a] == arr[b]){
+                    //如果出现了相等就证明出现了重复的元素,则删除j对应的的元素
+                    arr.splice(b,1);
+                    b--;
+                }                                                
+
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

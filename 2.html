@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- script标签一旦引入外部js的文件后在标签里面写的js代码浏览器就会默认忽略掉不生效！
+    
+    如果实在需要在内部script标签中书写代码则需要重新书写一个script标签！
+    -->
+    <script>
+        // alert('hello world') alert 弹窗
+        // document.write("输出内容") 向body输出内容 ；document 文档  ；write 写
+
+        // console.log("向控制台输出内容")  ；console 控制台 ；Log 输出；
+        // alert(1231131)  字面量都是一些不可变的值 如；1234  字面量都是可以直接使用 ，但一般都不会直接去使用
+        // x=12334234234 变量可以用来保存字面量 而变量的值都是可以改变的
+
+
+        // 声明变量一般声明变量都使用 var 关键字来进行声明变量
+        // var a= "shuaibi"
+        // console.log(a)
+
+
+        // 标识符在js中所有自主命名的都可以叫做标识符 如；变量名，函数名，属性名 命名规则 ：1.标识符可以有；数字，字母，—— ，$
+        // 2.标识符不可以以数字来开头 3.标识符不能是ES中的关键字和保留字
+
+
+        // 数据类型指的就是字面量的类型；
+        // 在JS中一共有六种数据类型：String 字符串  Number 数值 boolean 布尔 null 空值 Undefined未定义  Object 对象
+
+
+
+
+        //1. String 字符串：1.在JS中需要使用双引号引起来 2.使用双引号或者单引号都可以但是不能混着用3.引号之间不可以嵌套去使用
+        //  在字符串中可以用 \  作为转义符   ；  \"表示"  ,  \'表示'  ,\n 表示换行 ，\t制表符 ，\\表示\
+        // var a = "html"
+        // a = "我说：\'今天天气不错！ \'"
+        // alert(a)
+
+        // 2.Number 数值： 在JS中所有的整数以及浮点数都是 Number类型 。包括 整数和浮点数（小数）
+
+        // var b = 1244;
+        // 字符串
+        // var a = "1244";
+        // console.log(typeof b);
+        // 可以使用typeof来检查输出的数据类型
+        // console.log(typeof a);
+
+        // 3.Boolean 布尔值只有两个 ： true 表示为真！；false表示为假！
+
+        // var a = false;
+        // console.log( typeof a)
+        // console.log(  a)
+
+        //4.Null（空值）类型只有一个Null： 表示为空的对象  使用typeof 检查Null会返回Object
+        //5.Undefinde (未定义)类型只有一个Undefinde :表示未定义的 。当声明一个变量不赋值时候默认为Underfined
+        // var b ;
+        // var a = Null;
+        // console.log(typeof a)
+        // console.log(typeof b)
+
+
+
+        //二。强制类型转换：
+        //String类型转换；
+        //方法一；调用toString方法来转换类型 ;2.该方法不会影响到原来的变量。只会返回转换的结果；3.Null和Underfined是不能被toString转换类型的。因为没有toString方法；
+        //方法二；调用String()函数,并将被转换的数据作为参数传递给函数
+        //使用String()函数做强制类型转换时。对于Number和Boolean实际上就是调用的toString方法
+        //但是对于null 和nudefined，就不会去调用toString方法
+        //  方法一； var a = 1243;
+        // a = true;
+        // a = a.toString();
+        // console.log(typeof a);
+        // console.log(a);
+
+
+        // 方法二  var a = 12424;
+        // a = null
+
+        // a = Undefined;
+        // a = String(a);
+        // console.log(typeof a)
+        // console.log(a)
+        //三，Number类型强制转换：
+        // 方法一；调用Number()函数:
+        //String转Number：1.如果是纯数字的字符串则直接将其转换为数字  ；2.如果是字符串中带有非数字的字符则转换为NaN;3.如果字符串为空串或者为空格则转换为0
+        //Boolean转Number： 1.true转成1 ；2.false转成0；
+        //Null转Number ： 1.转成-0;
+        //Underfined转Number ： 转换成NaN;
+        // var a = "123214sadasda";
+        // a = Number(a);
+        // console.log(typeof a );
+        // console.log(a)
+        //方法二： 使用parseInt 和parseFloat函数1. parseInt ()把字符串转换为一个整数；2.parseFloat ()把字符串转换为浮点数
+        // var a = "23123px"
+        // a = parseFloat(a)
+        // console.log(typeof a);
+        // console.log(a)
+
+        // var a = "0x10"
+        // a = parseInt(a);
+        // console.log(a);
+        // console.log(typeof a);
+        //四，Boolean强制类型转换 ：使用 Boolean()函数 ；1.Number类型转换为Boolean类型 除了 0 和NaN以外全都是返回为true ；2.String类型转换为Boolean类型 除了空串其余都都为true ;
+        //3.Null 和Underfined 都被转换为false
+        // var a = 0;
+
+        // a = Boolean(a);
+        // console.log(typeof a);
+        // console.log(a);
+
+
+        // var k = 13434;
+        // k = String(k);
+        // k = true;
+        // k= false;
+        // k=null;
+        // k=Object;
+        // k=Undefined;
+        // k = Number(k);
+        // k = 23213;
+        // k = "sss";
+        // k = null;
+        // // k= Undefined;
+        // k = Boolean(k)
+
+        // console.log(k);
+        // console.log(typeof k);
+
+
+
+        //算数运算符：
+        // 1.typeof 就是一个运算符，可以获得一个值 将该值的类型以字符串类型方式返回
+        // + 可以对两个值进行相加进行返回 如果不返回值那么运算符将不会对原来变量进行改变；当一个非Number类型的相加则会自动将其转换为Number类型然后进行运算返回值；任何和NaN做运算返回值都是NaN;
+        //如果对两个字符串去做加法运算则会进行拼接，进行返回；任何值和字符串相加都会先转换为字符串再进行相加返回值；
+        // 隐式转换： 我们只需要将任意的数据类型加一个"""空的字符串就可以将其转换为String类型；这种隐式转换是浏览器默认的，实际上他也是调用String函数进行转换；
+        // var a = 123;
+
+        // a = a +""
+        // console.log(typeof a);
+        // console.log(a);
+
+
+        //练习 ：
+        // var a = 1 + 2 + "3";
+        // console.log("a = " + a)
+
+        //  - 除了加法会对Number类型改变成String类型 ，其他运算符都是将String类型改变成Number类型；
+        // 可以用- * /来进行隐式的类型转换 ： 1-"0" 1*1 1/1
+        // var a = 9%2;
+        // console.log(a)
+        // consloe.log(typeof a)
+
+
+
+        //一元运算符 ： + 正号 ：正好不会对数字产生影响 -负号；负号可以对数字进行取反；
+        //对于非Number类型的值；可以使用+号来进行隐式转换 ，原理同Number（）函数一样：
+        // var a = 1+ +2+2;
+        // a = a-"";
+        // console.log(a);
+        // console.log(typeof a);
+
+
+        /*
+        自增 ++ ：
+        1.通过自增来使变量增加1
+        2.对于一个变量自增后，原变量会立刻增加1；
+        3.无论式a++ 或者++a他都会立即使变量增加1
+        不同的是a++和++a 的值不同
+        a++的值等于原来变量的值（自增以前的值）
+        ++a的值等于自增后的值；
+        自减同理
+        */
+        // var a = 2;
+
+        // console.log(++a);
+        // a = a++ + ++a + a;
+        // a = a++;
+        // console.log("a =" + a)
+
+        // var n1 =10 ,n2= 20;
+        // var n = n1++;
+        // console.log('n='+n)
+        // console.log("n1="+n1)
+
+
+        // n = ++n1;
+        // console.log('n'+n);
+        // console.log('n1='+n1)
+        // n = n2 --;
+        // console.log('n='+n)
+        // console.log('n2='+n2)
+
+        // n = --n2 ;
+        // console.log('n='+n);
+        // console.log('n2='+n2);
+
+
+
+        /*
+        逻辑运算符：！  非 ；可以用来对一个值进行运算 所谓非运算就是值对一个Boolean进行取反的操作 ： true 变false false变true;如果取反两次不会产生变化；
+        对于非Boolean类型的取反 会先将其转换为Boolean类型再进行取反；可以用俩次非来把其他数据类型转换为Boolean类型；原理和Boolean（）函数一样；
+
+// 与运算：总的来说就是在true中找false； 而对于非Boolean类型的值来说并不会改变其类型
+
+        && 与运算 ： &&可以对符号俩端的值进行运算并返回结果：
+        运算规则： 两个值中只要有一个为false 则返回false
+        如果两个值都为true 才会返回true；
+
+// 或运算 ：总的来说就是false中找true ；
+        || 或运算 ： 可以对符号俩端的值进行运算并返回结果：
+        运算规则： 两个值中只要有一个值为true 则全部返回为true
+        如果两个值都是false 才会返回false ：
+
+
+        || && 的非Boolean值运算 ： 如果第一个值为true 则必然返回第二个值
+                                        如果第一个值为flase 则直接返回第一个值
+        */
+        //    var  a =  false ;
+        //    a = !a;
+        //    console.log(a)
+        // var a = 10 && 2;
+        // a = !!a;
+        // console.log(typeof a)
+        // console.log(a)
+
+
+
+        // 非运算符：
+        // var a = true && false;
+
+        // a = true && ;
+        // console.log("a = " + a)
+        //第一个值为true ，会检查第二个值；
+        // true && alert("我再这里");
+
+        // 当第一个值为false时则不会进行第二值的检查
+        // false && alert("我再这里");
+
+
+
+        //或运算符：
+        //  var a  = false || false;
+        //  console.log( typeof  a );
+        //  console.log ( a);
+
+        //非 或的非Boolean类运算：
+        // var a = 2 && 0;
+        // console.log(typeof a);
+        // console.log(a);
+
+        //与运算 如果两个值都是true 则返回第一个值
+        //如果第一个值为false 则返回第二个值
+        // var a = 0 || 2;
+        // console.log(typeof a);
+        // console.log(a);
+
+
+
+        // var a = 1 && 2;
+        // a = !a;
+        // console.log(typeof a);
+        // console.log(a);
+
+
+
+        // var a = 40;
+        // a += 40;
+        // console.log(a)
+
+        /*
+        关系运算符 ： 非数值的运算会将其先转换为数值类型再返回值
+        所有值和NaN比较都是返回false
+        */
+        // var b = 10;
+        // var a = null;
+        // console.log(10>null)
+
+        //当两个比较值都是字符串时，优先比较值的字符编码；
+        // 如果两个字符一样则比较下一位所以可以借用他来进行英文的排序；比较中文没有意义
+        // console.log("2"<"5"); true
+
+        //当字符串进行比较时一定要进行类型转型；
+        // console.log("11" < +"5");
+
+
+        //在字符串中使用编码 使用的是十六进制的编码用\n来使用
+        // console.log("\u3620")
+        //     <!-- //在网页中输出编码 使用的是他十进制的编码 用&#来使用 -->
+        // <!-- <h1>&#128563;</h1> -->
+
+
+        //相等运算符：== ；通过相等运算符来比较两个值是否相等 如果会相等会返回true，否则返回false；
+        //如果比较不同类型的运算符则会自动转换相同的类型再进行比较
+        // var a = 10 ;
+        // console.log(a==0);
+        //判断是否是NaN 使用isNaN()函数
+        // var a = 54464648;
+        // console.log(isNaN(a))
+
+
+        //不相等运算！==；通过不相等运算符来比较两个值是否不相等 如果不相等则返回true 否则返回false；
+        //同理不同类型的值运算则会自动转换成相同的类型再进行比较
+
+
+        //全等 === ； 和==类似但不同的是如果两个类型不同的值进行比较则直接返回false
+        // var a = 10;
+        // console.log(a === "10")
+
+        //!==不全等；同理不同类型的值运算则会自动转换成相同的类型再进行比较
+
+
+
+
+
+
+        /*
+        条件运算符： 也叫三元运算符：语法： 条件表达式？语句1：语句2；
+        执行的流程：
+        条件表达式在执行时，首先对条件表达式进行求值
+        如果该值为true，则执行语句1 ，并返回结果；
+        如果该值为false ，则执行语句2，并返回结果;
+同理不同类型的值运算则会自动转换成相同的类型再进行比较
+        */
+        // var a = 10;
+        // var b = 20;
+        // a < b ? alert("a大") : alert("b大")
+
+        //获取a和b的最大值
+        // var max = a > b ? a : b;
+        // console.log("max=" + max)
+
+
+
+
+
+
+        // 流程控制语句；通过流程控制语句可以控制程序执行的流程；使程序可以根据一定的条件来选择执行；
+        //语句的分类； 1.条件判断语句 ；2.条件分支语句；3.循环语句；
+        //条件判断语句：使用条件判断语句可以在执行某个语句之前判断，如果条件成立才会执行语句，条件不成立则不执行；
+        //if()语句 ；语法一； if(条件表达式)
+        //  语句
+        // if语句在执行的时候，会优先判断条件表达式进行求值判断，如果表达式的值为true则执行语句。如果为false则不会执行之后的语句；
+        //if语句只能控制它紧随其后的语句,如果希望控制多条语句需要放进代码块中
+        // var a = 10;
+        // if (a > 9) {
+        //     alert("w zuishuai ")
+        // }
+        // 与&&运算都要满足条件才会返回
+        //或||运算只要满足一个条件则返回
+        // var a = 25;
+        // if (a > 10 || a <= 20) {
+        //     alert("a大于10，并且小于十");
+        // }
+
+
+        /*if语法二：if(条件表达式){
+            语句..
+         }else{
+            语句...
+         }
+         if....else...语句 ；
+                     当该语句执行时，会先对if后的条件表达式进行求值判断，
+                       如果该值为true时，则执行if后的语句：
+                       如果值为false时，则执行else后的语句；
+        */
+
+
+        // var a = 30;
+        // if (a > 10 && a <= 25) {
+        //     alert("1")
+        // } else {
+        //     alert("2")
+        // }
+
+        /*if 语法三： 
+        if(条件表达式){
+            语句。。
+        }else if (条件表达式){ 
+               语句。。
+        }else if (条件表达式){ 
+               语句。。
+        }else { 
+            语句。。
+        }
+        if ...else if ...eles
+        当该语句执行时，会从上至下的依次对条件表达式进行判断求值
+        如果值为true ，则直接返回当前值
+        如果值为false，则继续判断。 
+        该语句中只会有一块代码执行，一旦执行就会直接结束语句！
+        */
+
+        //练习： 
+        // prompt()函数可以弹出一个提示框，该提示框中会带有一个文本框，用户可以在文本框中输入内容，该函数以字符串作为参数；
+        //用户输入的内容将会通过函数进行返回，可以定义一个变量来接受
+        //promprt（）函数的类型都是会转换为Srting类型
+
+        // var a = prompt("请输入成绩");
+        //判断值是否合法 ,isNaN使用函数进行非法值的判断！
+        // if (a > 100 || a < 0 || isNaN(a)) {
+        //     alert("拉出去打")
+        // } else {
+        //     if (a == 100) {
+        //         alert("奖励一辆宝马")
+        //     } else if (a < 99 && a >= 80) {
+        //         alert("奖励一台苹果手机")
+        //     } else if (a < 80 && a >= 60) {
+        //         alert("奖励一本书")
+        //     } else if (a < 60) {
+        //         alert("什么也没有")
+        //     }
+        // }
+        // var a = prompt("请输入你的身高");
+        // var b = prompt("请输入你有多少钱");
+        // var c = prompt("请输入你帅不帅");
+
+        // alert(a + "," + b, "," + c);
+        // if (a >= 180 && b >= 1000 && c >= 500) {
+        //     alert("我一定要嫁给他")
+        // } else if (a >= 180 || b >= 1000 || c >= 500) {
+        //     alert("还凑合")
+        // } else {
+        //     alert("滚蛋")
+        // }
+
+
+        // var a = +prompt("请输入第一个数");
+        // var b = +prompt("请输入第二个数");
+        // var c = +prompt("请输入第三个数");
+
+
+        // if (a < b && a < c) {
+        //     //a最小的时候
+        //     if (b < c) {
+        //         alert(a + "," + b + "," + c)
+        //     } else {
+        //         alert(a + "," + c + "," + b)
+        //     }
+        // } else if (b < a && b < c) {
+        //     //b最小的时候
+        //     if (a < c) {
+        //         alert(b + "," + a + "," + c)
+        //     } else {
+        //         alert(b + "," + c + "," + a)
+        //     }
+        // } else {
+        //     //c最小的时候
+        //     if (a < b){
+        //         alert(c + "," + a + "," + b)
+        //     }else { 
+        //         alert(c + "," + b + "," + a)
+        //     }
+        // }
+
+
+        //条件分支语句也叫   switch语句
+        //语法：   switch(条件表达式){
+        //             case 表达式
+        //                语句。。。
+        //                    break；
+        //                        default:
+        //                              语句
+        //                              break;    
+        //}
+        /*
+        执行流程switch。。。case。。语句
+        在执行时会依次将case后的表达式的值和switch后表达式的值进行全等比较
+        如果比较结果为true ，时则送case开始执行代码。
+        当前后面的代码全都会执行
+        如果为false ，则继续向下比较。
+        */
+        // var a = "wc";
+        // switch (a) {
+        //     case 1:
+        //         console.log("shabi")
+        //         //可以使用break来退出执行语句，这样可以确保只会执行当前的语句不会往后执行
+        //         break;
+        //     case 2:
+        //         console.log("shabi2")
+        //         break;
+        //         //default，处理结果都为false时的语句
+        //     default:
+        //         console.log("非法字符")
+        //         break;
+        // }
+
+
+
+
+
+
+        // var a = 5;
+        // switch (a) {
+        //     case 5:
+        //         console.log("你很臭")
+        //         break;
+        //     case 10:
+        //         console.log("你很帅")
+        //         break;
+        //     default:
+        //         console.log("你像树哥")
+        //         break;
+        // }
+
+
+
+        //练习：
+        // var a = 2;
+        // switch (parseInt(a/10)) {
+        //     case 4:
+        //     case 5:
+        //     case 6:
+        //         console.log("合格")
+        //         break;
+        //     default:
+        //         console.log("不合格")
+        //         break;
+        // }
+        //练习二：键盘输入对应的数字来返回星期几
+        // var a = +prompt("今天星期几");
+        // switch (a) {
+        //     case 1:
+        //         console.log("今天星期一")
+        //         break;
+        //     case 2:
+        //         console.log("今天星期二")
+        //         break;
+        //     case 3:
+        //         console.log("今天星期三")
+        //         break;
+        //     case 4:
+        //         console.log("今天星期四")
+        //         break;
+        //     case 5:
+        //         console.log("今天星期五")
+        //         break;
+        //     case 6:
+        //         console.log("今天星期六")
+        //         break;
+        //     case 7:
+        //         console.log("今天星期天")
+        //         break;
+
+        //         default:
+        //             console.log("你写错了")
+        // }
+
+        //当成绩大于60时，为合格 小于60为不合格
+        // var a = "1";
+        // switch (parseInt(a / 10)) {
+        //     case 6:
+        //     case 7:
+        //     case 8:
+        //     case 9:
+        //     case 10:
+        //         console.log("合格");
+        //         break;
+        //     default:
+        //         console.log("不合格")
+        // }
+
+
+
+
+
+
+
+
+
+        /*循环语句 ：
+        while循环 ：
+        语法：
+        while(条件表达式){ 
+            语句。。。
+        }
+        while语句在执行时，先对条件表达式进行求值判断，如果值为true 则执行循环体，循环体完毕后
+        继续对表达式进行判断，如果为true再次进行判断以此循环 如果表示的值循环到为false时就会终止循环
+*/
+        // var a = 1;
+        // while (true) {
+        //     alert(a++);
+        //     //使用if语句来判断循环多少次，
+        //     if (a == 20) {
+        //         //结束循环
+        //         break;
+        //     }
+        // }
+
+        /*
+        创建一个循环一般需要三个步骤
+        */
+        //1.初始化变量
+        // var a = 0;
+        //2.在循环中定义条件表达式
+        // while (a < 11000) {
+        //     document.write(a++ + "<br/>")
+        // }
+
+
+
+        /*
+        do 。。。。while循环
+        语法 ：
+        do { 
+                语句。。。
+        }while(条件表达式)
+        执行流程 ：语句在执行时，会先执行循环体。
+        循环体执行完毕后，再对while后的条件表达式进行判断，
+        如果结果为true 则继续执行循环体，执行完毕继续判断以此循环
+        如果结果为false，则会终止循环
+
+        实际上两个功能语句类似，不同的是while是先判断后执行，
+        而do。。。while会先执行后判断，从而会保证程序至少执行一次
+        */
+        // var a = 1;
+        // do {
+        //     document.write(a++ + "<br/>")
+        // } while (a < 10);
+
+        //练习 ：年利率百分之五 一千块钱要多少年才会增加到五千块钱
+        // var a = 1000;
+        // var b = 0;
+        // while (a < 5000) {
+        //     a *= 1.05;
+        //     b++;
+
+        // }
+        // console.log(b)
+
+        // 计数器，每增加一次使b增加
+        // var a = 1000;
+        // var b = 0;
+        // do {
+        //     console.log(b);
+        //     a *= 1.05;
+        //     b++
+        // } while (a<5000)
+
+        //写成了死循环，让用户可以一直去输入。当if中的条件语句判断为false时就会直接终止，如果直接输入非法字符则直接返回false 弹出alert的提示框
+        // while (true) {
+        //     var a = prompt("建波考了多少分？");
+        //     if (a >= 0 && a <= 100) {
+        //         break;
+        //     }
+        //     alert("傻逼")
+        // }
+
+        // // 判断值是否合法 ,isNaN使用函数进行非法值的判断！
+        // if (a > 100 || a < 0 || isNaN(a)) {
+        //     alert("拉出去打")
+        // } else {
+        //     if (a == 100) {
+        //         alert("奖励一辆宝马")
+        //     } else if (a < 99 && a >= 80) {
+        //         alert("奖励一台苹果手机")
+        //     } else if (a < 80 && a >= 60) {
+        //         alert("奖励一包华子")
+        //     } else if (a < 60) {
+        //         alert("你可以滚了，海涛制造！")
+        //     }
+        // }
+
+
+
+
+        // 求一到1000偶数之和
+        //先找到一到一千的数
+        // var b = 0;
+        // for (var a = 0; a <= 100; a++) {
+        //     //判断一千以内的偶数
+        //     if (a % 2 == 0) {
+        //         // b = a + b;
+        //         console.log(a)
+        //     }
+        // }
+
+        // console.log(b);
+
+
+
+        // for (var a = 1; a < 9; a++) {
+        //     //创建一个内循环控制宽度
+        //     for (var b = 1; b <= a; b++) {
+        //         document.write("&nbsp"+b+"*"+a+"="+a*b)
+        //     }
+        //     document.write("<br/>")
+        // }
+    </script>
+</head>
+
+<body>
+
+
+    <!-- <a href="javascript: alert('hello world')"> 点我一下</a> -->
+    <!-- <div onclick="alert('hello world')">点我一下</div> -->
+
+    <!-- <button onclick=" alert('弹窗')"> 点击事件</button> 可以用 onclick 把js代码写入标签中-->
+    <!-- <a href="javascript: alert('我在这里')">点击事件</a>  也可以把 javascript 写入href中-->
+</body>
+
+</html>

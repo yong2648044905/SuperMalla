@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        /*
+        作用域：
+        --作用域指的是变量的作用范围
+        --在js中一共有俩种作用域：
+        1，全局作用域：
+        直接编写在script标签中的js代码都在全局作用域；
+        全局作用域在打开页面的时候就会创建，关闭的时候就会自动去销毁；
+        在全局作用域中有一个对象window：
+        它代表的是浏览器的窗口，它由浏览器 创建我们可以直接使用
+
+
+        在作用域中创建的变量和函数都会作为window对象的属性和方法来进行保存；
+
+        2,函数作用域:
+    p'p'p'p'p
+--调用函数时创建函数作用域，函数执行完毕后销毁
+--每调一次函数作用域，他们之间是相互独立的
+在函数作用域中可以访问全局作用域的变量，而全局作用域的变量是不能访问函数作用域 
+在函数作用域中操作变量，他会先在自身的作用域中去寻找，如果有会直接使用，如果没有则会向着外面去寻找，直到全局作用域。如果全局作用域中也没有
+直接报错；
+        */
+      
+        // function a() {
+        //     var j = 10;
+        //     console.log(j)
+        // }
+        // a();
+        //变量声明提前：
+        //使用var声明变量，会在所有代码执行前面声明，但不会被赋值。 
+  
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

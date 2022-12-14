@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //正则表达式用于定义一些字符串的规则
+        //计算机可以根据正则表达式，来检查一个字符串是否符合规则
+        //获取字符串中符合规则的内容提取出来
+
+        //创建正在表达式的对象
+        //语法：var 变量 = new RegExp("z正则表达式","匹配模式")
+        //这个正则表达式可以检查是否含有a，只要含有a就返回true
+        //在构造函数中可以传递一个匹配模式作为第二个参数
+        //可以是：
+        //           i： 忽略大小写
+        //             g:全局匹配模式
+        var reg = new RegExp("a", "i")
+        var str = "A";
+        //正则表达式的方法
+        //test（）使用这个方法可以用来检查一个字符串是否符合正则表达式的规则
+
+        var a = reg.test(str)
+        // console.log(a)
+
+
+
+
+        //使用字面量来创建正则表达式
+        //语法：   var变量  = /正则表达式/匹配模式
+        var b = /a/i;
+
+
+
+        //创建一个表达式，检查一个字符串是否含有a或b
+        // b = /a|b/
+        //[]  也是或的关系
+        b = /[ab]/
+
+        ///[a-z]/任意小写字母
+        //[A-Z]任意大写
+        //[A-z] == 任意大小
+        b = /[a-z]/
+
+        //检查字符串是否含有abc ，acc，aec
+        b = /a[bce]c/
+        //[^]除了这括号里的
+        b = /[^ab]/
+        //任意数字
+        b = /[0-9]/
+        // console.log(b.test("aAcsadbbb"))
+
+
+
+        //量词
+        //通过量词可以设置一个内容出现的次数 
+        //量词只对它前面的一个内容起作用
+        //{n}正好出现n次
+        //出现{m,n} 出现m到n次
+        //{m，}m次以上
+        ///ab+c/ 和{m，}一样
+        //* 表示零个或者多个
+        //？ 零个或者一个
+        //^ 表示开头
+        // $ 表示结尾、
+        //  如果同时使用 ^ 和&则要求字符串完全一样
+        // 否则可以 /^a|a&/
+        var av = /(ab){3}/
+        av = /ab*c/
+        av = /^a|a$/
+
+        // console.log(av.test("ababab"))
+
+
+        //创建一个正则表达式，用来检查一个字符是否合法手机号
+        //13567890123
+
+        var ae = "13567890123"
+        var as = /^1[3-9][0-9]{9}$/
+
+        // console.log(as.test(ae))
+
+
+
+        // .表示任意字符
+        //在正则表达式中使用\作为转义字符
+        // \. 才是表示.
+        var sj = /\./
+        // console.log(sj.test(".sss..ss"))
+
+
+
+
+
+
+
+
+        /*
+        \w  任意字母和数字 _   
+        \W   除了字母和数字 _
+
+        \d   任意数字
+
+        \D 除了数字
+
+        \s    空格
+
+        \S    除了空格
+
+\w{3,}(\.\w+*)@[A-z0-9]+\.(\.[A-z]{2,5}){1,2}
+
+        \b  单词边界 
+        \B  除了单词边界
+        
+        */
+
+        var ss = /\bsha\b/;
+        // console.log(ss.test("sh  sha sss"))
+
+
+
+
+
+
+
+        //接受一个用户的输入
+        var sss = prompt("请输入用户名")
+        //(/^\s*/ 去除开头的空格
+        //去除前后的空格
+        sss = sss.replace(/^\s*|\s*$/g, "")
+        // console.log(sss)
+
+
+
+
+
+        var sb = /\w{3,}(\.\w+)*@[A-z0-9]+\.(\.[A-z]{2,5}){1,2}/
+        var sb2 =  "abc@ab.com"
+        console.log(sb.test(sb2))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

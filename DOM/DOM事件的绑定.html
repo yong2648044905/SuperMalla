@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var btn01 = document.getElementById("btn1")
+            // 为按钮绑定第二个函数
+            //
+            // btn01.onclick = function () {
+            //     alert(1)
+            // }
+            // / addEventListener()
+            //通过整个方法可以为元素绑定响应函数
+            //需要三个参数：
+            // 1.事件的字符串。不能添加on
+            //2.回调函数，当事件触发时该函数会被调用
+            //3，是否在捕获阶段触发事件，需要传递一个布尔值，一般传一个false
+            //该方法不会被覆盖
+            //IE8 不支持该方法
+            // btn01.addEventListener("click", function () {
+            //     alert(111)
+            // }, false)
+
+            // addEvent()
+            //在IE8中可以使用addEvent来绑定事件
+            // 参数有两个：
+            //1，事件的字符串。要on
+            //2回调函数
+            //不同的是它是绑定先执行，执行的顺序和上面整个函数相反
+            // btn01.addEvent("onclick", function () {
+            //     alert(111)
+            // })
+
+
+            bind(btn01, "click", function () {
+                alert(1)
+            })
+        }
+
+
+        //定义一个函数，用来为指定元素绑定响应函数
+        /*
+        addEventListener中的this是指绑定的对象
+        addachEvent 中的this 指的winodow
+        需要去☀两个方法的this
+        */
+        //参数：
+        //obj 要绑定的事件对象
+        //eventStr 事件的字符串
+        //callback回调函数
+
+        function bind(obj, eventStr, callback) {
+
+            if (obj.addEventListener) {
+                obj.addEventListener(eventStr, callback, false)
+
+            } else {
+                //this是由调用的方法来决定的
+                //这里this由window调用
+                //  让它直接去调用一个匿名函数
+                obj.addachEvent("on" + eventStr, function () {
+                    callback.call(obj)
+                })
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">点击事件</button>
+</body>
+
+</html>

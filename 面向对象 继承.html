@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //继承   通过extends关键词来完成继承操作
+        //当一个类继承另一个类时，就相当于另一个类复制所有的代码
+        //继承发生时被继承的类被称为父类（超类），继承的类叫子类
+        //通过继承可以减少重复的代码，并且可以在不修改一个类的前提下对其进行扩展
+        /*
+        封装--提供了安全性
+        继承---可扩展性
+        多态--灵活性
+        
+        OCP 开闭原则
+           -- 程序应该对修改关闭,对扩展开放
+        
+        */
+        class Dogss {
+            constructor(name) {
+                this.name = name
+            }
+
+            sayName() {
+                console.log("nihaoasha ")
+            }
+        }
+        class Dog extends Dogss {
+            //在子类中可以提供创建同名的方法来重新父类的方法
+            //构造函数也可以重写,重新的一行代码第一行必须为super（），就是调用父类的实例
+            constructor(name) {
+                super(name)//调用父类的实例
+
+            }
+            sayName() {
+                super.sayName()
+                console.log("shabinihao")
+            }
+        }
+
+        class Pengd extends Dogss {
+          
+        }
+
+
+        const dog = new Dog("shabi")
+        const cat = new Pengd("sahio")
+        dog.sayName()
+        cat.sayName()
+
+
+
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

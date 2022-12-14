@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        class Person {
+            constructor(name) {
+                this.name = name
+            }
+        }
+
+        class Dog {
+            constructor(name) {
+                this.name = name
+            }
+        }
+
+
+        const dog = new Dog('旺财')
+        const person = new Person("laoli")
+
+        console.log(dog)
+        console.log(person)
+        //定义一个函数这个函数将接受一个对象作为参数，它可以输出你好打印对象name属性
+        //多态  ：在JS中不会检查参数的类型，所以就意味着任何数据都可以作为参数传递
+        //只要调用某个函数，无需指定类型，只要对象满足某些条件
+        //多态为我们提供了灵活性
+
+        function sayName(obj) {
+            console.log("nihao" + obj.name)
+        }
+
+
+        sayName(dog)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

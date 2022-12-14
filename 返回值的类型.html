@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function fun() {
+        //     for (var s = 0; s < 5; s++) {
+        //         if (s == 2) {
+        //             //可以使用它来退出当前循环
+        //             // break;
+        //             //可以使用它来跳过该循环
+        //             // continue;
+        //             //直接退出整个函数；
+
+        //             //返回值可以是任意数据类型
+        //             // return;
+
+        //         }
+        //         console.log(s)
+        //     }
+
+
+        // }
+        // fun();
+
+
+        // function a1() {
+        //     function a2(){
+        //         alert("我是a2");
+        //     }
+
+        //     // 将a2作为返回值去返回
+        //     return a2;
+        // }
+        // a1()();
+
+        // function fun1() {
+        //     document.getElementById("demo").innerHTML="Hello World";
+        // }
+
+
+        // 匿名函数怎么去执行和调用
+        //匿名函数可以使用括号来表示他是一个整体
+        //立即执行函数，函数定义完事以后会被立即执行；
+        //一般只会被执行一次
+        // (function(a,b){
+        //     alert("匿名函数"+a+b)
+        // })(23,"sdasd");
+        //后面的括号是用来传参的
+
+
+
+
+        var obj = new Object();
+        obj.a = "shunwukon "
+        obj.b = "shabi"
+
+        //函数也可以作为对象的属性：
+        //如果一个函数作为对象的属性来保存的话，就可以称这个函数是对象的方法；
+        // 而调用这个函数就等于调用对象的方法；
+        obj.c = function () {
+            console.log(obj.a);
+        };
+        obj.c();
+
+
+        function a(h1,h2) {
+            alert(h1+h2);
+        };
+
+        h1(obj.a);
+        h2(obj.b);
+    </script>
+</head>
+
+<body>
+    <button onclick=" a ()">点击</button>
+</body>
+
+</html>

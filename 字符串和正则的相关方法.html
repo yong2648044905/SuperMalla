@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = "1a2b3c4d5e6f"
+        //split拆分字符串
+        // 方法中可以传递一个正则表达式来作为参数，这样方法会根据正则表达式进行拆分
+        //默认全局匹配模式
+        var a = str.split(/[A-z]/)
+        console.log(a)
+
+        //search 搜索字符串中是否含有指定内容
+        //它也可以接受正则
+        //只会查第一个设置全局匹配也没用
+        var j = "shaigbisadasidahs;ohas;djA{Jdasfp"
+        var a = j.search(/[A-Z]/)
+        console.log(a)
+
+
+        //match()
+        // 从字符串中提取指定的内容
+        //默认情况下match只会找到第一个匹配的内容就会直接返回。
+        //我们可以通过正则表达式设置为全局匹配模式，这样就会匹配到所有的内容
+        //可以为正则表达式设置多个匹配模式，
+        // match会将找到的内容变成数组返回
+        str = "1a2b3c4d5e6fSSSSSSSSSSSSSDF"
+        var c = str.match(/[A-z]/gi)
+        console.log(c)
+
+
+
+        //replace()
+        //可以将字符串中指定内容替换为新的内容
+        //参数：
+        //1，被替换的内容
+        //2，新的内容
+
+        str = "1a2b3c4d5e6fSSSaaaSSSSSSSSSSDF"
+        var h = str.replace(/a/g , "shabi")
+        console.log(h)
+
+
+
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

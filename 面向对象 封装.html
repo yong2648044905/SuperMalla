@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        
+        面向对象的特点：
+        封装 ，继承，多态
+
+
+        1，封装
+          对象就是一个用来存不同属性的容器
+
+
+          私有化数据 
+          需要需要保护的数据设置为私有只能在类内部使用
+
+          提供setter 和getter 方法来开放对数据的操作
+
+
+
+
+          封装主要用来保证数据的安全
+          实现封装的方法：
+          1，属性私有化加#
+          2，提供gettre 和setter方法来操作
+          get 属性名（）{
+            retunrn this。#属性
+          }
+
+          set 属性名（参数）{
+            this。#属性 =参数 
+          }
+        */
+
+        class Person {
+            #gender
+            #age
+            #name
+            #address = "shabi"//实例使用了#开头就变成了私有的属性，私有的属性只可以通过类内部访问
+            constructor(name, age, gender) {
+                this.#name = name
+                this.#age = age
+                this.#gender = gender
+            }
+            sayName() {
+                console.log(this.name)
+
+            }
+
+            //使用方法来访问私有化的类
+            //getter 方法来读取属性
+            getName() {
+                return this.#name
+            }
+
+            //setter方法来设置修改属性
+            setName(name) {
+                this.#name = name
+            }
+        }
+        const p1 = new Person("shabi", 20, "shab2")
+
+        p1.setName("shabi2124124")
+        console.log(p1)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

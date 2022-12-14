@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        JSON
+        js中的对象只有自己认识，其他语言都不认识
+
+        json就是一个特殊格式的字符串，这个字符串可以被任何语言识别
+        并且可以转换为任意语言中的对象  json主要在开发中主要用来数据的交互
+
+
+        JSON
+         javascript object notation js对象表示法
+           json和js对象的格式一样，只不过json字符串中的属性名字必须加上双引号其他的和js语法一致
+              json分类：
+             1，对象{}
+           2, 数组 []
+
+
+           JSON只允许六种
+           字符串，数值，布尔值，null，对象，数组，
+
+        
+        */
+        //将json字符串转换为js中的对象
+        //在js中为我们提供了一个工具类，就叫JSON
+        //这个对象可以帮助我们将一个JSON转换为JS对象，也可以将JS对象转换为JSON
+        //json---》js对象
+        //json。parse（）
+        //可以将json字符串转换为js对象
+        //它需要一个json的字符串来作为它的参数
+
+        // var obj = '{"name":"傻逼","age":"18","gender":"男"}'
+
+        // var a = JSON.parse(obj)
+
+        // console.log(a.name)
+
+
+        // js对象转换为json
+        // JSON.stringify()
+        //可以将js字符串转换为jsON字符串
+        //需要一个js对象作为参数，会返回一个json字符串
+        var boj3 = { name: "shabo", age: 209, gender: "sauihdi" };
+        var str = JSON.stringify(boj3)
+        console.log(str)
+     //evel 这个函数可以用来执行一段字符串形式的js代码，并且返回
+     //如果eval（）执行的字符串含有{}，他会将{}当成是代码快
+     //如果不希望将其当成代码块解析，则需要加上一个（）
+     //如果需要兼容ie7则引入外部的文件
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

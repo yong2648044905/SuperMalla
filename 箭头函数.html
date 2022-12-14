@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //箭头函数
+        //当箭头函数只有一个参数的时候可以省略括号
+        //可以在定义参数的时候指定参数
+        //箭头函数的返回值可以直接写在箭头函数后面
+        // const fun3 = (obj, age) =>
+        //     obj + age
+        // //如果直接在箭头后面设置对象字面量为返回值，对象字面量必须拿（）包起来不然会以为你是代码块
+        // const fun4 = () => ({ name: "shabiu" })
+
+        // console.log(fun3(2, 5))
+        // console.log(fun4().name)
+
+
+
+        //箭头函数没有直接的this它的this由外层的作用域去决定
+        //箭头函数的this和他的调用方式无关
+        function fu() {
+            console.log(this)
+        }
+
+
+        const fun5 = () => {
+            console.log(this)
+        }
+
+
+        const obj = {
+            name: "shabi",
+            fu,
+            fun5,
+            sayName() {
+                console.log(this.name)
+            }
+        }
+
+        obj, fu()
+        obj.fun5()
+        obj.sayName()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

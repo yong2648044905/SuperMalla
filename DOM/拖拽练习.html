@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+
+
+    <script>
+        window.onload = function () {
+            //实现流程
+            //1，当鼠标点击的时候元素开始拖拽    onmousedown
+            //2，当鼠标移动的时候鼠标会跟随鼠标移动 onmousemove
+            //3，当鼠标松开的时候元素停留在当前位置onmouseup
+            var box1 = document.getElementById("box1")
+
+            shabi(box1)
+
+
+        }
+
+        function shabi(obj) {
+            obj.onmousedown = function (event) {
+                // box1.setCapture();
+                //问题：鼠标只会一直在元素的00位置
+                //解决办法计算出元素的偏移量然后给onmousemove点击事件获取的坐标相减
+                // 鼠标。clentX - 元素。offsetLeft
+                // 鼠标。clentY - 元素。offsettop
+                event = event || window.event;
+                var oq = event.clientX - obj.offsetLeft;
+                var os = event.clientY - obj.offsetTop;
+
+                //给document添加onmousemove点击事件
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    //获取鼠标的坐标
+                    var left = event.clientX - oq;
+                    var top = event.clientY - os;
+                    //修改box1的坐标
+                    obj.style.left = left + "px"
+                    obj.style.top = top + "px"
+                    //为元素绑定应该松开事件来把元素定在获取的位置
+                    //实现：直接设置松开后取消给document添加的onmousemove事件
+                    //document绑定的onmouseup事件当有其他元素的时候如果不给全局绑定
+                    //就会失效
+                    document.onmouseup = function () {
+                        //当松开后直接取消所有事件包括它自己
+                        //这两个事件当松开以后两个事件都没有意义
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                        //
+
+
+                    }
+                    //当我们进行全选拖拽的时候浏览器会默认，去搜索导致dox失效
+                    //解决办法 直接给点击事件
+                    //解决办法二
+                    //给box1设置一个捕获所有的事件
+                    // return false
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p>sagds</p>
+    <div id="box1"></div>
+
+</body>
+
+</html>

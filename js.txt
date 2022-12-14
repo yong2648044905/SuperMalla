@@ -1,0 +1,112 @@
+querySelector   修改 class="demo" 的 <div> 元素的第一个子元素文本内容：
+nextElementSibling  返回下一个列表选项的 HTML 内容：
+getElementById() 返回指定 ID 的元素：
+firstElementChild 获取 HTML 中 <ul> 元素的第一个子元素:
+
+previousElementSibling  返回上一个列表选项的 HTML 内容
+lastElementChild  获取 HTML 中 <ul> 元素的最后一个子元素:
+
+
+
+JavaScript 的组成： 
+
+
+1.BOM - browser object Model 
+JS操作浏览器发生变化的属性和方法
+
+
+2.DOM -Docunment object Model
+JS 操作文档流发生变化的属性和方法
+
+3.ECMAScript
+JS的书写语法和规则
+
+
+JavaScript书写方式：
+1.行内式：直接把代码书写在标签上 分为 a标签：书写在href属性上： <!-- <a href="javascript: alert('hello world')"> 点我一下</a> -->
+非a标签：书写在标签属性上：    <!-- <div onclick="alert('hello world')">点我一下</div> -->
+2.内嵌式：把代码书写在script标签里：  // alert('hello world')
+3.外链式：把代码书写在一个.js的文件里 用src属性去引入！    <script src="./2.js">    </script>
+
+
+        // alert('hello world') alert 弹窗
+        // document.write("输出内容") 向body输出内容 ；document 文档  ；write 写
+
+        // console.log("向控制台输出内容")  ；console 控制台 ；Log 输出；
+        // alert(1231131)  字面量都是一些不可变的值 如；1234  字面量都是可以直接使用 ，但一般都不会直接去使用
+        // x=12334234234 变量可以用来保存字面量 而变量的值都是可以改变的
+
+
+        // 声明变量一般声明变量都使用 var 关键字来进行声明变量
+        // var a= "shuaibi"
+        // console.log(a)
+
+
+        // 标识符在js中所有自主命名的都可以叫做标识符 如；变量名，函数名，属性名 命名规则 ：1.标识符可以有；数字，字母，—— ，$ 
+        // 2.标识符不可以以数字来开头 3.标识符不能是ES中的关键字和保留字
+
+
+        // 数据类型指的就是字面量的类型；
+        // 在JS中一共有六种数据类型：String 字符串  Number 数值 boolean 布尔 null 空值 Undefined未定义  Object 对象
+
+    <!-- script标签一旦引入外部js的文件后在标签里面写的js代码浏览器就会默认忽略掉不生效！
+    
+    如果实在需要在内部script标签中书写代码则需要重新书写一个script标签！
+    -->
+
+    <!-- <a href="javascript: alert('hello world')"> 点我一下</a> -->
+    <!-- <div onclick="alert('hello world')">点我一下</div> -->
+
+    <!-- <button onclick=" alert('弹窗')"> 点击事件</button> 可以用 onclick 把js代码写入标签中-->
+    <!-- <a href="javascript: alert('我在这里')">点击事件</a>  也可以把 javascript 写入href中-->
+    
+
+
+
+数组的方法：
+        //push（）
+        //该方法可以向数组的末尾添加一个或者多个元素，并返回新的长度
+        //可以将添加的元素作为方法的参数传递
+        //这样这些元素将会自动添加到末尾
+
+
+
+        //pop()
+        //该方法可以删除数组的最后一个元素 ，并将删除的元素返回值返回
+
+        
+        //unshift（）
+        //向数组开头添加一个或者多个元素，并且返回新的数组长度；
+        
+        //shift删除数组开头的第一个元素，并且返回新的数组的长度；
+
+
+        
+        //sclice()方法
+        //该方法不会改变原有的数组，而是将截取的数组封装到一个新的数组中
+        //提取数组中指定的元素
+        //参数；
+        //1。截取开始的位置，包括开始索引2.截取最后的位置，不包含结束索引
+        //也可以只传一个参数,此时会截取从开始索引往后的所有元素,如果传递负的值则会开始倒数着截取
+
+                //splice()方法
+        //可以用于删除数组中的指定元素
+        //使用splice()会影响到原来数组,会将指定的元素从原数组中删除,并且将被删除的元素作为返回值返回
+        //参数:第一个,表示开始索引的位置;第二个表示删除的位置;第三个参数;可以传递一些新的元素,这些元素将会自动插入到开始的位置索引的前边进行
+
+
+      //concat()
+        //可以链接两个或者多个不同的数组,并且将新的数组返回.该方法不会对原来的数组产生影响
+        
+        //join
+        //可以将数组转换成字符串类型
+        //可以指定一个字符串作为参数,这个字符串将会成为数组中的元素连接符如果不指定连接符,则默认使用,作为链接符
+
+                //severse()
+        //该方法可以让数组颠倒顺序
+
+
+                //sort()
+        //可以对数组进行一个排序
+        //全都会以utf-8的排序
+        //可以给sort添加一个回调函数来进行指定规则的排序

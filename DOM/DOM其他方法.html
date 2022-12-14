@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //document.dody 中的所有元素
+            // var body = document.dody;
+            // //document.documentElemen html中所有的元素
+            // var html = document.documentElement
+            // // document.all    页面中所有的元素
+            // var all = document.all;
+            // //div中的所有元素
+            // var div = document.getElementsByTagName("div")
+            // console.log(html)
+
+
+
+
+            //根据元素的calss属性值查询一组元素节点对象
+            //getElementsByClassName
+            // var d1 = document.getElementsByClassName("d1")
+            // alert(d1.length)
+
+            //获取d1中的div
+            //querySelector 需要一个字符串作为参数。可以根据css选择器来查询一个元素的节点对象
+            //如果有多个一样的只会返回第一个
+            var div = document.querySelector(".d1 div")
+            //querySelectorAll 会查询多个符合条件的元素并封装到一个数组返回
+            var div2 = document.querySelectorAll(".d1")
+            console.log(div2.innerHTML)
+        }
+    </script>
+</head>
+
+<body>
+    <div class="d1">
+        <div>shabi</div>
+        <div>shaboisabodg</div>
+    </div>
+    <div class="d1">shabi
+        shaboisabodg
+    </div>
+    <div class="d1">shabi
+        shaboisabodg
+    </div>
+</body>
+
+</html>

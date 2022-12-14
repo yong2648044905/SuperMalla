@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //原型：prototype
+        //我们所创建的每一个函数解析器都会向函数中添加一个属性就是prototype
+        //如果函数作为普通函数进行调用时prototype没有任何作用
+        //但是作为构造函数调用时，它所创建的对象中都会有一个隐含的属性;指向该构造函数的原型对象
+        //原型对象通过__proto__
+        // 原型对象就相当于一个公共的区域，所有同一个类的实例都可以进行访问
+        //当我们访问一个对象的一个属性和方法时他会先找对象自身，如果有就会直接使用。如果没有则会去原型中寻找，
+        //以后创建构造函数的时候，可以将这些对象共有的属性和方法全部添加进原型中，这样就不用分别为每一个对象添加，也不会影响到全局作用域，就可以使用方法和属性！
+        function Mycalss() {
+
+        }
+        //向Mycalss的原型中添加属性a
+        Mycalss.prototype.b = 123;
+        //向Mycalss的原型中添加方法
+        Mycalss.prototype.c = function () {
+            alert("hi")
+        }
+        var a = new Mycalss;
+        var g = new Mycalss;
+        g.c();
+        console.log(a.b)
+        console.log(a.__proto__ == Mycalss.prototype);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

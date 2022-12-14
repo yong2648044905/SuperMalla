@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./DOM练习.css">
+
+
+
+</head>
+
+<body>
+
+    <div id="d1">
+
+
+        <img src="./imges/109951167975289216.jpg" alt="">
+        <img src="./imges/109951167975294156.jpg" alt="">
+        <img src="./imges/109951167975319372.jpg" alt="">
+        <img src="./imges/109951167975324915.jpg" alt="">
+        <img src="./imges/109951167975325211.jpg" alt="">
+        <img src="./imges/109951167975444543.jpg" alt="">
+
+
+
+
+
+
+    </div>
+    <div id="d2">
+        <button id="btn1">上一张</button>
+
+        <button id="btn2">下一张</button>
+
+
+    </div>
+
+    <p id="inof"> </p>
+
+
+
+    <script>
+
+
+
+
+
+
+
+        //获取到两个按钮
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        //绑定单击响应函数
+        btn1.onclick = function () {
+            indexs--;
+            // 当点击向前的时候则--
+
+            //判断indexs是否小于0 
+            if (indexs < 0) {
+                indexs = imgArr.length - 1;
+
+
+            };
+            img.src = imgArr[indexs];
+            //重新设置
+        inof.innerHTML = "一共有"+imgArr.length+"张，当前第"+(indexs+1)+"张"
+
+        }
+        btn2.onclick = function () {
+            // 要切换图片就是要修改img中的src属性
+            indexs++;
+
+
+            if (indexs > imgArr.length - 1) {
+                indexs = 0;
+
+            };
+            img.src = imgArr[indexs]
+        inof.innerHTML = "一共有"+imgArr.length+"张，当前第"+(indexs+1)+"张"
+
+        }
+
+
+
+        //要切换图片就是要修改img中的src属性
+        //获取到img标签
+        //getElementsByTagName  这个方法返回的一定是一个数组 ，直接使用[0]提取出来一个对象  
+        var img = document.getElementsByTagName("img")[0];
+        // 创建一个数组来存图片的路径
+
+        var imgArr = ["./imges/109951167975289216.jpg", "./imges/109951167975294156.jpg", "./imges/109951167975319372.jpg", "./imges/109951167975324915.jpg", "./imges/109951167975325211.jpg", "./imges/109951167975444543.jpg"]
+        // 创建一个变量来控制上下的动作
+
+        var indexs = 0;
+
+        //设置p标签的提示文字
+        //获取id
+
+
+
+
+
+    </script>
+</body>
+<script>
+
+    window.onload = function () {
+        var inof = document.getElementById("inof")
+        inof.innerHTML = "一共有" + imgArr.length + "张，当前第" + (indexs + 1) + "张"
+    }
+</script>
+
+</html>

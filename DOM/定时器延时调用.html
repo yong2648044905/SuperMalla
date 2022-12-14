@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //延时调用
+            //延时调用一个函数不马上执行，而是隔一段时间执行
+            //延时调用只会执行一次
+            var a = 1;
+            var time = setTimeout(function () {
+                console.log(a++)
+            }, 2000)
+            //用来关闭延时的调用
+            clearTimeout(time)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

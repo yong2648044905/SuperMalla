@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        //onload 事件会在整个页面加载完成后触发
+        //如果想把代码写在上面的话，就必须先写onload事件，如不写的话会不进行加载
+        //优先写在body标签里
+        window.onload = function () {
+            //获取到button的对象
+            var a = document.getElementById("btn")
+            //修改对象中的属性innerHTML
+            //绑定一个单击事件、
+            //像这种作为单机事件绑定的函数，我们成为单机响应函数
+            btn.onclick = function () {
+                alert("点击事件")
+            }
+//获取节点元素
+        }
+
+    </script> -->
+    <style>
+        #btn {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 1px green solid;
+        }
+
+        #btn2 {
+            width: 100px;
+
+            height: 100px;
+            background-color: red;
+            border: 1px green solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="inof"></p>
+    <button id="btn">点击</button>
+    <button id="btn2">点击是哦见</button>
+    <script>
+        var a2 = document.getElementById("btn")
+        var a1 = document.getElementById("btn2")
+
+        a1.onclick = function () {
+            alert("点击事件")
+        }
+
+
+        a2.onclick = function () {
+            alert("d'd'd")
+        }
+
+
+        var inof = document.getElementById("inof")
+        inof.innerHTML= "第二次"
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Mycalss(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        var a = new Mycalss("李淑萍", "薯饼", "饼干");
+        //当我们直接在页面中打印对象的时候实际上就在输出对象的toString方法的返回值
+        //如果想使输出对象时不输出Object 可以为对象添加一个toString（）方法
+
+        //修改Mycalss原型中的toString方法 
+        Mycalss.prototype.toString =function (){
+            return "shabi";
+        }
+        
+        var b = a.toString;
+        console.log(b);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

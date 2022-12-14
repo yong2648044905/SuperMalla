@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+    在for循环中提供了专门的位置来存放三个表达式：
+    1.初始化语句
+    2.条件表达式
+    3.更新表达式
+        for循环的语法：
+        语法一：
+        for(初始化表达式；条件表达式；更新表达式){
+                          循环体
+        }
+        for循环的执行流程：
+        1.执行初始化变量 ->2.条件表达式->3.循环体->4.更新表达式->2.条件表达式
+        (以此类推直至条件表达式为false时终止循环；而初始化表达式只会去执行一次)
+        for循环的三个条件表达式也可以写在外面；
+        如果不写条件表达式只写两个分号，此时for循环会进入死循环会一直执行下去！谨慎使用。
+        此时的条件表达式为true；
+    */
+        // for (var a = 1; a < 10; a++) {
+        //     console.log(a);
+        // }
+
+        // 练习一打印一到一百之间所有奇数之和
+        // var b = 0;
+        // for (var a = 1; a < 101; a++) {
+        //     if (a % 2 != 0) {
+
+        //         b = a + b;
+
+        //     }
+        //     console.log(b);
+        // }
+
+        //练习二：打印一百之间七倍数的个数和总和
+        // var b = 0;
+        // var c = 0;
+        // for (var a = 0; a <= 100; a++) {
+        //     if (a % 7 == 0) {
+        //         // console.log(a);
+        //         c++;
+        //         b = b + a;
+        //     }
+
+        // }
+        // console.log("七倍数有几个" + c);
+        // console.log("七倍数之和" + b);
+
+
+        // 练习三：在页面中用户输入数字判断 该数是不是质数
+
+        // var a = prompt("请输入数字");
+        // if (a <= 1) {
+        //     alert("该值不合法");
+        // } else {
+        //     for (var i = 2; i < a; a++) {
+        //         console.log(a);
+        //     }
+        // }
+
+
+        /*
+        嵌套的for循环
+        */
+        // for (var a = 0; a < 5; a++) {
+
+        //     //内嵌的for执行的次数是外面for相乘
+        //     for (var b = 0; b < 5 - a; b++) {
+        //         document.write("*")
+        //     }
+        //     document.write("<br/>")
+        // }
+
+
+
+        //练习打印九九乘法表：
+        //先创建外循环来控制高度
+        // for (var a = 1; a < 9; a++) {
+        //     for (var b = 1; b <= a; b++) {
+        //         document.write("&nbsp" + b + "*" + a + "=" + a * b);
+        //     }
+        //     document.write("<br/>")
+        // }
+
+
+
+        //打印一到一百之间的质数
+
+        //先获取二到一百的数
+        // for (var a = 2; a < 100; a++) {
+        //     //创建一个布尔值来保存结果默认a是质数
+        //     var c = true;
+        //     // //判断是否是质数
+        //     // console.log(a)
+        //     //获取2-a之间所有的质数
+        //     for (var b = 2; b <= a; b++) {
+        //         // console.log(b)
+        //         //判断a是否可以被b整除
+        //         if (a % b == 0) {
+        //             //如果进入判断则证明i不是质数，修改c为false
+        //             c = false;
+        //         }
+        //     }
+
+        //     //如果是质数打印a的值
+        //     if (c) {
+        //         console.log(a)
+        //     }
+        // }
+        //获取一到一百的质数
+        // for (var a = 2; a <= 100; a++) {
+
+        //     //定义c是true ，如果为false则输出说明a是质数；
+        //     var c = true;
+        //     //   console.log(a);
+        //     // 获取a中所有的质数；
+        //     for (var b = 2; b < a; b++) {
+
+        //         // 判断是否可以被a整除
+        //         if (a % b == 0) {
+        //             // 如果进入判断则证明不是质数修改c的值为false
+        //             c = false;
+        //         }
+        //     }
+
+        //     //如果是质数输出a
+
+        //     if (c) {
+        //         console.log(a);
+        //     }
+        // }
+
+
+
+
+
+
+
+
+
+
+        /*
+
+        break关键字可以用来退出switch或者循环语句
+        只对最近的for产生影响；
+        可以使用label来标识循环语句。这样可以使指定的for结束；
+        */
+        // h1:
+        // for (var a = 0; a < 6; a++) {
+        //     console.log("外层" + a)
+        //     for (var b = 0; b < 5; b++) {
+        //         break h1;
+        //         console.log("内层" + b)
+        //     }
+        // }
+
+        //   continue;表示继续的意思，会使跳过当次循环;同样只会对最近的循环起作用
+        // console.time("a")可以用来开启计时器 他需要一个字符串作为他的标识符
+        // for (var a = 0; a < 5; a++) {
+        //     if (a == 3) {
+        //         continue;
+        //     }
+        //     console.log(a);
+        // }
+        // console.timeEnd("a")写在末尾来计算用了多久。
+
+
+        // 可以通过   Math.sqrt()来进行开方的处理
+        // var a = Math.sqrt(10);
+        // console.log(a);
+
+
+
+    </script>
+</head>
+
+<body>
+    &nbsp;
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        在js中表示一个人的信息：(name gender age)；{
+            var name="猪八戒"
+            var gender = "男"
+            var age = 18
+            如果使用基本数据类型所创建的变量都是独立的并不可以成为一体；
+            对象属于多种数据类型，在对象中可以保存多种不同的数据类型；
+
+
+            对象的分类：
+              --内建对象
+              由ES标准中定义的对象，在任何的ES的实现中都可以使用
+              --宿主对象
+              --由js的运行环境提供的对象，目前来说主要指的是浏览器提供的对象
+              比如BOM DOM
+
+
+              自定义对象：
+              --由开发人员自己创建的对象；
+        }
+        */
+
+        //创建对象
+        //使用new关键字调用的函数，是构造函数constructor
+        //构造函数是专门用来创建对象的；
+        // var obj = new Object();
+        //在对象中保存的值叫做属性
+        //向对象添加属性
+        //语法：对象.属性名字 =属性值；
+        //向obj中添加一个name属性；
+        // obj.name = "shabi";
+        // obj.gender = "男";
+        // obj.age = 18;
+        // console.log(obj);
+
+        //读取对象中的属性
+        //语法： 对象。属性名
+        //如果读取对象中没有的属性不会报错会返回undefined；
+        // console.log(obj.gender);
+        //修改对象中的属性 。相当于覆盖原有的值；
+        //语法 对象.属性名 =新值；
+        // obj.name = "sti";
+        // console.log(obj.name)
+
+        //删除对象中的属性：
+        //语法：delete 对象.属性名
+        // delete obj.name;
+        // console.log(obj.name)
+
+
+        //属性名：在对象中不会强制的去要求遵守标识符的使用规范来命名，无论什么东西都可以作为属性名，但是在平时中还是要遵守；
+        //如果实在需要使用特殊的名字不能用.的方式来进行，而是需要使用[""]；
+        // obj["4466"]=464;
+        // 读取时也要这样取出来
+        // var a ="4466";
+        // console.log(obj[a])
+
+
+        // in运算符
+        //通过该运算来查询一个对象中是否含有指定的属性
+        //如果有返回true 否则返回false
+        //语法："属性名" in 对象
+
+        // var obj = new Object();
+        // obj.a = "100";
+        // obj.b = "2";
+        // obj.c = " 5";
+        // console.log("s" in obj)
+
+        // var obj = new Object();
+        // obj["1234"] =789;
+        // console.log(obj["1234"])
+
+
+        var obj = new Object();
+        obj.a = 10;
+        obj.c = 20;
+        obj.d = 29;
+        obj["shabi"] = "gg";
+        console.log(obj.a)
+        // alert(obj.a)
+
+        obj.d = "20"
+
+        document.write(obj.a);
+        document.write(obj["shabi"] + obj.d + obj.c)
+
+
+        //查询对象中是否含有指定属性
+        console.log("a" in obj);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

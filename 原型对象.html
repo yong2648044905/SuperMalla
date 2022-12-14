@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Mycalss() {
+
+        };
+        //给原型对象添加一个属性prototype
+        Mycalss.prototype.a = "原型对象";
+        var b = new Mycalss;
+        // console.log(b.a);
+        //使用in检查对象是否含有某个属性的时候，如果对象中没有但是原型中有它也会返回true；
+        // console.log("a" in b);
+        //    Object的hasOwnProperty()方法返回一个布尔值，判断对象是否包含特定的自身（非继承）属性
+        //原型链的概念
+
+
+        // console.log(b.hasOwnProperty('a'));
+        // consoel.log(b.__proto__)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

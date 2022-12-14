@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #obuter {
+            width: 1100px;
+            height: 420px;
+            margin: 50px auto;
+            background-color: rgb(247, 0, 255);
+            padding: 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #imgList {
+            /* width: 6600px; */
+            list-style: none;
+            position: absolute;
+            left: 0px;
+        }
+
+        #imgList li {
+
+            float: left;
+            margin-left: 15px;
+        }
+
+
+        #navDiv {
+            position: absolute;
+            bottom: 15px;
+            /* left: 402.5px; */
+        }
+
+        #navDiv a {
+            float: left;
+            width: 30px;
+            height: 30px;
+            background-color: rgb(255, 0, 212);
+            margin-left: 5px;
+            opacity: 0.5;
+
+            /* 兼容ie8的透明 */
+            filter: alpha(opacity=50);
+        }
+
+        #navDiv a:hover {
+            background-color: aliceblue;
+        }
+    </style>
+    <script src="./toop.js"></script>
+
+    <script>
+        window.onload = function () {
+            //设置ul宽度
+            var imgList = document.getElementById("imgList")
+            var imgArr = document.getElementsByTagName("img")
+            //设置ul宽度
+            imgList.style.width = 1100 * imgArr.length + "px";
+            //向左移动ul
+            //设置导航按钮居中
+            var navDiv = document.getElementById("navDiv")
+            var obuter = document.getElementById("obuter")
+            //设置navDiv left值
+            navDiv.style.left = (obuter.offsetWidth - navDiv.offsetWidth) / 2 + "px"
+
+
+            //默认索引
+            var index = 0;
+            var allA = document.getElementsByTagName("a")
+            //设置默认选中的效果
+            allA[index].style.backgroundColor = "aliceblue";
+
+
+            //点击超链切换指定图片
+            //给所有超链接绑定单机函数
+            for (var i = 0; i < allA.length; i++) {
+                //怎么获取对象的索引
+                //给每一个a属性添加一个空的属性
+                allA[i].num = i;
+                allA[i].onclick = function () {
+
+                    //因为点击按钮以后自动切换和本次的点击事件同时进行了
+                    //所以要取消，不然当点击事件触发以后页面不会停留
+                    clearInterval(time);
+
+                    //获取超链接的索引
+                    //然后把他设置为index
+                    index = this.num;
+                    //切换图片
+                    // imgList.style.left = -1100 * index + "px";
+                    //使用move函数来切换图片
+                    move(imgList, -1100 * index, 60, "left", function () {
+                        //动画执行完毕，开启自动切换
+                        autoChange();
+
+                    });
+                    //修改正在选中的a
+                    setA();
+
+
+                }
+
+            }
+
+
+            autoChange();
+
+            //创建一个方法用来设置a的选中状态
+            function setA() {
+
+                //判断当前索引是否为0
+                if (index >= imgArr.length - 1) {
+                    //显示最后一张的时候索引回去0
+                    index = 0;
+                    //通过修改它的css来改变
+                    imgList.style.left = 0
+                }
+                for (var i = 0; i < allA.length; i++) {
+                    allA[i].style.backgroundColor = ""
+                }
+                //将选中的a设置为黑色
+                allA[index].style.backgroundColor = "black"
+            }
+
+            var time;
+
+
+            // 创建一个函数来开启自动切换功能
+            function autoChange() {
+                //开启一个定时器去切换图片
+                time = setInterval(function () {
+                    //切换图片就是使索引自增
+                    index++;
+                    index %= imgArr.length;
+                    //调用前面的move函数让他走
+                    move(imgList, -1100 * index, 30, "left", function () {
+                        setA();
+                    });
+
+
+                }, 5000)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 创建一个外部的div，来作为大的容器 -->
+    <div id="obuter">
+        <ul id="imgList">
+            <li> <img src="./imges/01.jpg" alt=""></li>
+            <li> <img src="./imges/02.jpg" alt=""></li>
+            <li> <img src="./imges/03.jpg" alt=""></li>
+            <li> <img src="./imges/04.jpg" alt=""></li>
+            <li> <img src="./imges/05.jpg" alt=""></li>
+            <li> <img src="./imges/06.jpg" alt=""></li>
+            <li> <img src="./imges/01.jpg" alt=""></li>
+
+
+
+        </ul>
+        <!-- 导航按钮 -->
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+
+        </div>
+    </div>
+</body>
+
+</html>

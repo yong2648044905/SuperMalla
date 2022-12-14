@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .b1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .b2 {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var btn1 = document.getElementById("btn1")
+            var bxo1 = document.getElementById("bxo1")
+            btn1.onclick = function () {
+                // 修改box样式
+                // bxo1.style.width = "900px"
+                //我们可以通过修改元素的class属性来修改元素的样式
+                //这样一来我们只需要修改一次即可修改多个样式
+                //此时浏览器只需要重新渲染一次，并且这种方式可以使表示和行为进一步分离
+                // bxo1.className += " b2"
+                toggleClass(bxo1, "b2")
+
+            }
+
+            //定义一个函数用来向一个元素中添加指定的class属性
+
+            //参数 ：   obj要添加的class属性的元素
+            //cn class的数值
+            function addClass(obj, cn) {
+
+
+                if (!hasClass(obj, cn)) {
+                    obj.className += " " + cn;
+                }
+            }
+
+            // 判断一个元素中是否含有指定的class值
+            function hasClass(obj, cn) {
+                //创建正则
+                // var reg = /\bb2\b/;
+                var reg = new RegExp("\\b" + cn + "\\b");
+
+                return reg.test(obj.className);
+            }
+
+            //删除指定的class属性
+            function removeClass(obj, cn) {
+                var reg = new RegExp("\\b" + cn + "\\b");
+                //删除class
+                obj.className = obj.className.replace(reg, "")
+            }
+
+
+            //切换一个类
+            //如果元素有就删除没有就添加
+            function toggleClass(obj, cn) {
+                //判断obj中是否有cn
+                if (hasClass(obj, cn)) {
+                    //有就删除
+                    removeClass(obj, cn);
+
+                } else {
+                    addClass(obj, cn);
+                }
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">点击按钮修改box1的样式</button>
+    <div id="bxo1" class="b1 b2">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementById("box1")
+
+            //给滚轮添加滚动事件
+            //onmousewheel
+            //DOMMouseScroll 火狐需要使用整个来绑定滚动事件
+            //注意该事件需要addEventListener点击函数来绑定
+            box1.onmousewheel = function (event) {
+                event = event || window.event
+                // alert(event.wheelDelta)
+                //判断鼠标滚动的方向
+
+                if (event.wheelDelta > 0 || event.datail < 0) {
+                    // alert("向上滚")
+                    //box1.clientHeight - 10 + "px" 每次变滑动变10px
+                    box1.style.height = box1.clientHeight - 10 + "px"
+                } else {
+                    box1.style.height = box1.clientHeight + 10 + "px"
+
+
+                }
+                //wheelDelta 获取鼠标滚动的坐标
+                //在火狐中使用datail来获取
+                //这个向上的是负值 下滚是正值
+                //而它的值不看大小只看正负
+                return false
+            }
+
+            bind(box1, "DOMMouseScroll", box1.onmousewheel)
+        }
+        function bind(obj, eventStr, callback) {
+
+            if (obj.addEventListener) {
+                obj.addEventListener(eventStr, callback, false)
+
+            } else {
+                //this是由调用的方法来决定的
+                //这里this由window调用
+                //  让它直接去调用一个匿名函数
+                obj.addachEvent("on" + eventStr, function () {
+                    callback.call(obj)
+                })
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        ---垃圾回收（GC）
+        垃圾回收就像人生活时间长了就会产生垃圾，程序运行久了也会产生垃圾
+        这些垃圾积攒过多以后，就会导致程序的运行变慢。
+        所以需要一个垃圾回收机制来处理程序运行过程中产生的垃圾
+        ---什么是垃圾：
+        当一个对象没有任何的变量和属性对他进行引用的时候，此时我们会无法对他进行操作该对象
+         在JS中垃圾回收不需要人为的去干涉，只需要将不需要引用的对象和函数设置为Null，等到生命周期浏览器会自动给你销毁； 
+        */
+        var obj = new Object();
+        //当obj直接赋值为null时相当于把obj写死了永远无法调用里面的值或者修改
+        obj = null;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

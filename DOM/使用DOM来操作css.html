@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 400px;
+            height: 400px;
+            background-color: red !important;
+            /* important 表示这个样式优先级是最高的
+            即使js也不能去覆盖样式会导致js的样式无法生效 */
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementById("box1")
+            var btn01 = document.getElementById("btn01")
+            btn01.onclick = function () {
+                //点击按钮后修改box1的大小
+                // 通过js来修改元素的样式
+                //语法： 元素.style.windth =样式的值
+                // 注意：如果css的样式中含有--- 这样的在JS中是不合法的
+                //需要将这种样式修改成驼峰命名法 ，去掉-然后-后的字母大写就行了
+                //我们通过style属性设置的样式都是内联式样式
+                //一般优先级就比较高
+                box1.style.width = "900px";
+                box1.style.height = "900px";
+                box1.style.backgroundColor = "yellow"
+                // alert("sabi")
+            }
+
+            var btn02 = document.getElementById("btn02")
+            btn02.onclick = function () {
+                // 读取 内联样式
+                // 语法 ：元素.style.windth
+
+                alert(box1.style.width)
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">shabi</button>
+    <button id="btn02">shabi2</button>
+
+    <br>
+    <br>
+    <div id="box1">
+
+    </div>
+</body>
+
+</html>

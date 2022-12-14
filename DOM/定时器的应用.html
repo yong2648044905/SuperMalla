@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #bxo1 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-color: red;
+
+            margin-top: 20px;
+        }
+
+        #bxo2 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-color: yellow;
+
+            margin-top: 20px;
+
+            top: 400px;
+        }
+    </style>
+    <script src="./toop.js"></script>
+    <script>
+        window.onload = function () {
+            var btn1 = document.getElementById("btn1")
+
+            var btn2 = document.getElementById("btn2")
+            var btn3 = document.getElementById("btn3")
+            var btn4 = document.getElementById("btn4")
+
+
+
+            var bxo1 = document.getElementById("bxo1")
+            var bxo2 = document.getElementById("bxo2")
+
+            // var time;
+
+
+
+
+            btn3.onclick = function () {
+                move(bxo1, 800, 20, "left")
+
+            }
+
+            btn4.onclick = function () {
+                move(bxo2, 800, 20, "width", function () {
+                    move(bxo2, 400, 20, "height", function () {
+                        move(bxo2, 400, 20, "top", function () {
+
+                        })
+                    })
+                })
+
+            }
+
+
+
+
+
+
+            btn1.onclick = function () {
+
+                // //关闭上一个定时器
+
+                // clearInterval(time)
+
+                // //开启一个定时器用来执行动画的效果
+
+                // time = setInterval(function () {
+                //     // clearInterval(timer)
+                //     //获取原来box的值
+                //     var oldvalue = parseInt(getStyle(bxo1, "left"))
+                //     //获取新的值
+                //     var newvalue = oldvalue + 10;
+                //     //判断是否大于800
+                //     if (newvalue > 800) {
+                //         newvalue = 800;
+                //     }
+                //     //将新的值给box1 
+                //     bxo1.style.left = newvalue + "px"
+                //     //当计时器移动到800 的时候停止动画
+                //     if (newvalue == 800) {
+                //         //关闭定时去
+                //         clearInterval(timer)
+                //     }
+                // }, 30)
+                move(bxo1, 800, 10)
+
+            }
+
+            btn2.onclick = function () {
+                move(bxo1, 0, 10)
+
+            }
+
+
+
+
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn2">点击按钮元素向左移动</button>
+    <button id="btn3">点击按钮元素向右移动</button>
+    <button id="btn4">测试</button>
+
+
+    <button id="btn1">点击按钮元素向右移动</button>
+    <div id="bxo1"></div>
+    <div id="bxo2"></div>
+
+</body>
+
+</html>

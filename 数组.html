@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        对象分为:
+        内建对象
+        宿主对象
+        自定义对象
+
+
+        数组（Array)
+        -数组也是一个对象
+        -他和我们普通的对象类似，也是用来存一些值的
+        -但是不同的是普通对象是使用字符串来作为属性名进行的
+        而数组是使用数数字作为索引操作元素；
+
+
+        --索引是什么
+        从0开始的整数就是索引；
+        数组的存储性能比普通对象要好，在开发中我们经常使用数组来存储一些数据；
+        */
+        //    var obj  = new Object();
+
+        //创建一个数组的对象
+        // var arr = Array();
+        // //向数组中添加一个元素
+        // //语法：数组[索引] = 值；
+        // arr[0] = 20;
+        // arr[1] = 30;
+        // arr[2] = 40;
+        // // arr[20] = 40;
+        // //向数组的最后一个位置添加元素
+        // arr[arr.length] = 50;
+
+
+
+        //语法：arr[2]
+        // console.log(arr[2]);
+
+        //获取数组的长度
+        //可以使用length属性来获取数组的长度
+        //语法 数组.length
+        // console.log(length)
+
+        //对于连续的数组使用length可以获取到数组的长度(元素的个数)
+        //对于非连续的数组 使用length会获得到数组最大的索引+1
+        //尽量不要创建非连续的数组
+
+
+        //修改length
+        //如果修改的长度大于原长度的话，多余的部分就会空出来
+        //如果修改的长度短于原来的长度 ，就会被删除
+        // arr.length = 21;
+        // console.log(arr);
+
+
+
+
+
+
+        //使用字面量来创建一个数组
+        //给数组指定数组中的元素
+        // var arr = [1, 2, 3, 4, 5, 6, 20];
+        // // console.log(a.length);
+        // //取第二个元素
+        // console.log(arr[2])
+
+        //使用构造函数创建数组
+        // var a2 = new Array(10, 29, 30);
+        // console.log(a2);
+
+        //数组中的元素可以是任意类型
+        // arr = ["shabi ", 2, undefined, true, null]
+        // console.log(arr);
+        //也可以是对象
+        // var obj = {
+        //     name: "孙",
+        // }
+        //在数组最后一位后面增加
+        // arr[arr.length] = obj;
+        // arr = [{ name: "孙" }, { name: "zhu " }, { name: "sha" }]
+        // console.log(arr[2].name);
+        //存放一个函数
+        // arr = [function () { alert("1") }, function () { alert("2") }]
+        //调用输出函数
+        // console.log()
+        
+        // arr[1]();
+        //数组也可以放数组，称为二维数组
+        arr=[[2,3,5],[23241,213412,3][21412,324423,44]]
+        console.log(arr[0,0])
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

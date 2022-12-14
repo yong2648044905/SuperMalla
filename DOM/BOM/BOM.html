@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /*
+        BOM:
+        --浏览器对象模型
+        --BOM可以使我们通过js来操作浏览器
+        --在BOM中为我们提供了一组对象，用来完成对浏览器的操作
+        --BOM对象有六种：
+        Window:   代表的是整个浏览器的窗口，同时window也是网页中的全局对象
+
+
+        Navigator:   代表的是当前浏览器的信息，通过该对象可以来识别不同的浏览器
+由于历史的原因Navigator对象中的大部分属性都已经不能帮助我们去识别浏览器了 
+一般我们只会去使用useAgent来判断浏览器的信息  
+
+        Location：   代表当前浏览器的地址栏信息，通过Location可以获取地址栏信息，或者操作浏览器跳转页面
+
+
+        History :   代表的是浏览器的历史记录，可以通过该对象来操作浏览器的历史记录
+         由于隐私原因该对象不能获取到具体的历史记录，只能操作浏览器向前的或者向后的翻页
+         而且该操作只在当次访问的时候才有效
+
+        Screen :  代表用户的屏幕信息，通过该对象可以获取到用户的显示器相关的信息；
+        
+        
+        
+        
+        */
+
+        // console.log(navigator.appName)
+
+
+        //检查是否是IE浏览器
+        // alert("ActiveXObject" in window);
+
+
+        window.onload = function () {
+            var btn = document.getElementById("btn1")
+            btn.onclick = function () {
+
+                // 如果直接打印Location会获取地址的路径
+                // 可以去修改他的路径，并且会生成响应的历史记录
+                // location ="https://www.bilibili.com/video/BV1YY411J7fc/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=2d4e246ad58c026e319d3df6bd362c44"
+                // location.assign()
+                // assign 会把路径存为参数进行跳转
+
+
+
+                // location.reload(true)
+                //用于重新加载页面和刷新一样
+                //当他的参数传进去true的话就会实现刷新缓存
+
+
+
+
+                //  location.replace("")
+                //  可以使用一个新的页面跳替换当前页面。页面不可以回退，
+                //不会生成历史记录，不能使用回退按钮回退；
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">sagd;hsad</button>
+</body>
+
+</html>

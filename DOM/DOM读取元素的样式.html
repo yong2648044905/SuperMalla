@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            /* important 表示这个样式优先级是最高的
+            即使js也不能去覆盖样式会导致js的样式无法生效 */
+        }
+    </style>
+
+
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementById("box1")
+            var btn01 = document.getElementById("btn01")
+            btn01.onclick = function () {
+                //currentStyle 获取元素当前显示的样式
+                //除了ie其他的浏览器都不支持
+                // alert(box1.currentStyle.width)
+
+
+
+                //其他浏览器可以使用的
+                //getComputedStyle 获取元素当前显示的样式
+                // 需要两个参数来使用
+                //第一个就是要获取的的样式元素
+                //第二个可以传递一个伪元素，一般传输null
+                // 该方法使用以后回返回对象的样式
+                //可以通过对象。样式名来读取样式
+                //如果获取的样式木有设置，则会获取到真实的值。而不是默认的值
+                //比如：没有设置windth，他不会获取到一个auto，而是一个长度
+                // var obj = getComputedStyle(box1, null)
+                //正常浏览器获取的方式
+                // alert(getComputedStyle(box1, null).width)
+                //IE8及其以下
+                // alert(box1.currentStyle.width)
+
+                alert(getStyle(box1, "width"))
+
+
+            }
+
+
+        }
+        //定义一个函数，用来获取指定元素的当前样式
+        //参数：
+        //   obj 要获取样式的元素
+        //     name 要获取的样式名
+        function getStyle(obj, name) {
+            //判断是否有getComputedStyle这个方法
+            //如果没有去执行currentStyle这个方法
+            //必须加上window这个全局变量，让getComputedStyle变成属性就不会去报错
+
+            if (window.getComputedStyle) {
+                return getComputedStyle(obj, null)[name];
+
+            } else {
+                return obj.currentStyle[name];
+            }
+
+            //如何兼容所有浏览器的版本
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">shabi</button>
+    <button id="btn02">shabi2</button>
+
+    <br>
+    <br>
+    <div id="box1">
+
+    </div>
+</body>
+
+</html>

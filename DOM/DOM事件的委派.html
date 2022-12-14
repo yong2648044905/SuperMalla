@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+            var a = document.getElementsByTagName("a")
+            for (var i = 0; i < a.length; i++) {
+                a[i].onclick = function () {
+                    alert("我是a的响应函数")
+                }
+            }
+
+            //为后续的超链接添加点击响应函数
+            //给每一个绑定太麻烦，怎么去解决？？/
+            //给父级的绑定事件，当子节点去触发的时候就会冒泡，
+            //继承了父元素的事件
+            //事件的委派：
+            //指将事件绑定给元素的共同祖先元素，这样后代元素上事件触发的时候会一直去冒泡
+            //从而通过祖先元素的响应函数来处理事件
+            //事件的委派是利用了冒泡，通过委派可以减少事件的绑定次数，提高程序的性能
+            var ul = document.getElementById("ul")
+            var btn01 = document.getElementById("btn01")
+            btn01.onclick = function () {
+                var li = document.createElement("li")
+                li.innerHTML = "<a href='javascript:;'class='link'>1</a>"
+
+                ul.appendChild(li)
+            }
+
+
+            ul.onclick = function (event) {
+
+                event = event || window.event
+                // alert("Shabo")
+                // target  表示的是触发事件的对象，谁去触发了
+                //target 就是谁
+                //这里判断的意思就是当target接受到了是class中是link时就直接触发弹窗
+                if (event.target.className == "link") {
+                    alert("shabi23123")
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <button id="btn01">点击添加超链接</button>
+    <ul id="ul">
+        <li><a href="javascript:;" class="link">1</a></li>
+        <li><a href="javascript:;" class="link">2</a></li>
+
+        <li><a href="javascript:;" class="link">3</a></li>
+
+    </ul>
+</body>
+
+</html>
